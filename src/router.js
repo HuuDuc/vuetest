@@ -2,8 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './views/Home.vue'
-import About from './views/About.vue'
+import Chart from './views/Chart.vue'
 import Tasks from './views/Tasks.vue'
+import Posts from './views/Posts.vue'
 
 Vue.use(Router)
 
@@ -16,14 +17,19 @@ export default new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About
+      path: '/chart',
+      name: 'chart',
+      component: Chart
     },
     {
       path: '/tasks',
       name: 'task',
       component: Tasks
+    },
+    {
+      path: '/posts',
+      name: 'post',
+      component: Posts
     }
   ]
 })

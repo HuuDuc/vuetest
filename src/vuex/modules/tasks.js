@@ -7,6 +7,20 @@ export default {
   state: {
     tasks: []
   },
+  getters: {
+    TASKS: state => state.tasks
+  },
+  mutations: {
+    GET_TASKS (state, payload) {
+      state.tasks = payload
+    },
+    ADD_TASK (state, payload) {
+      state.tasks.push(payload)
+    },
+    REMOVE_TASK (state, payload) {
+      state.tasks.splice(payload, 1);
+    }
+  },
   actions: {
     getTasks ({ commit }) {
       axios
@@ -31,20 +45,5 @@ export default {
         .then(r => r.data)
         .then(() => commit('REMOVE_TASK', index))
     }
-  },
-  mutations: {
-    GET_TASKS (state, tasks) {
-      state.tasks = tasks
-    },
-    ADD_TASK (state, task) {
-      state.tasks.push(task)
-    },
-    REMOVE_TASK (state, index) {
-      // state.tasks = state.tasks.filter(task => task.id !== id)
-      state.tasks.splice(index, 1);
-    }
-  },
-  getters: {
-    getTasks: state => state.tasks
   }
 }

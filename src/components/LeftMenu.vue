@@ -1,6 +1,9 @@
 <template>
   <aside class="menu">
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="title">
+      <img width="50" src="../assets/logo.png" alt="Vue" /> <br/>
+      {{ title }}
+    </h1>
     <p class="menu-label">
       General
     </p>
@@ -35,14 +38,19 @@ export default {
           isActive: this.$route.path === '/'
         },
         {
-          name: 'About',
-          to: '/about',
-          isActive: this.$route.path === '/about'
+          name: 'Chart',
+          to: '/chart',
+          isActive: this.$route.path === '/chart'
         },
         {
           name: 'Tasks',
           to: '/tasks',
           isActive: this.$route.path === '/tasks'
+        },
+        {
+          name: 'Posts',
+          to: '/posts',
+          isActive: this.$route.path === '/posts'
         }
       ],
       updateActiveUrl: to => {
